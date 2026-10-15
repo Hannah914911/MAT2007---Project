@@ -18,7 +18,7 @@ Institute for Health Metrics and Evaluation (IHME), based on Ng et al. (2014).
 - Columns used in this project: `Entity`, `Year`, `Daily smoking prevalence - male (IHME, GHDx (2012))`, `Daily smoking prevalence - female (IHME, GHDx (2012))`; renamed to: `country`, `year`, `male`, `female`
 
 ## Report
-The full written report is available here: [MAT2007__Report__Hannah_Toetemeier.pdf](MAT2007__Report__Hannah_Toetemeier.pdf)
+The full written report is available here: [MAT2007___Report___Hannah_Toetemeier.pdf](MAT2007___Report___Hannah_Toetemeier.pdf)
 
 ## Package Requirements
 - pandas, numpy, matplotlib, scipy, seaborn
