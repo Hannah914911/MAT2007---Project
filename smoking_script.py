@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 from scipy import stats
 import seaborn as sns
 
-# File settings, add your file path here
+# File settings: add your file path here
 file_path = None
-file_path = "/Users/hannaht/Desktop/MAT2007- project/Smoking prevalence and cigarette consumption.csv"
+file_path = "/Users/name/Desktop/MAT2007- project/Smoking prevalence and cigarette consumption.csv"
 #check the working directory --> might have to adjust it to the folde you saved the data to 
 print(os.getcwd())
 #in case errors occure this is what i did to fix it, run them in the terminal of vs code #cd ~/Desktop/"MAT2007- project" #pwd #python3 script.py
@@ -20,7 +20,7 @@ output_folder = "smoking_output"
 column_rename = None
 column_rename = {"Entity": "country", "Year": "year", 'Daily smoking prevalence - male (IHME, GHDx (2012))': "male", 'Daily smoking prevalence - female (IHME, GHDx (2012))': "female",}
 
-#creating a graph outline using seaborn --> makes the graphs prettier by having a consisten layout and adding tick lines for easier interpretation
+#creating a graph outline using seaborn --> makes the graphs prettier by having a consistent layout and adding tick lines for easier interpretation
 sns.set_theme(style="ticks",rc={"xtick.minor.visible": True,"ytick.minor.visible": True,})
 
 def load_data():
@@ -203,11 +203,11 @@ def main():
     inspect_data(new_smoking_data)
 
     # Analyse the data 
-    #absolute yearly measn, standarad deviation adn standard error across the countries
+    #absolute yearly mean, standard deviation and standard error across the countries
     yearly = calculate_yearly_averages(new_smoking_data)
     print()
     print(yearly[["year", "female_mean", "female_sd", "female_se", "male_mean", "male_sd", "male_se"]].round(3).to_string(index=False))
-    #has the same means but against a baseline so %change from 1980, so males and females are comparable
+    #has the same means, but against a baseline so %change from 1980, so males and females are comparable
     relative = calculate_relative_decline(yearly)
     #calculates the relative slopes, per country and sex
     slopes = calculate_relative_slopes(new_smoking_data)
@@ -216,7 +216,7 @@ def main():
     run_paired_t_test(slopes)
     run_decline_t_tests(slopes)
 
-    # Create the three graphs/plots, two prevalence graphs and the box plot for the slopes
+    # Create the three graphs/plots: two prevalence graphs and the box plot for the slopes
     plot_prevalence(yearly)
     plot_relative_decline(relative)
     plot_slope_distribution(slopes)
